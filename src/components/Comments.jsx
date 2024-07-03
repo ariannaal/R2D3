@@ -35,7 +35,7 @@ const Comments = ({ elementId }) => {
     
    return (
        <div>
-            <h2>Comments for element {elementId}</h2>
+            <h2>Reviews: {elementId}</h2>
             <ul>
                 {comments.map(comment => (
                     <li key={comment._id}>

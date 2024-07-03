@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image';
-import {NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const MyNavbar = () => (
@@ -18,11 +18,11 @@ const MyNavbar = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse>
         <Nav className="me-auto">
-          <Nav.Link  to="/">Home</Nav.Link>
-            <Nav.Link  to="/tv-shows">TV Shows</Nav.Link>
-            <Nav.Link  to="/movies">Movies</Nav.Link>
-            <Nav.Link  to="/recently-added">Recently Added</Nav.Link>
-            <Nav.Link  to="/my-list">My List</Nav.Link>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/tv-shows" className="nav-link">TV Shows</Link>
+            <Link to="/movies" className="nav-link">Movies</Link>
+            <Link to="/recently-added" className="nav-link">Recently Added</Link>
+            <Link to="/my-list" className="nav-link">My List</Link>
         </Nav>
         <Nav className="ms-auto d-flex flex-row align-items-center">
           <Image
