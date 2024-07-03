@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
+import Comments from './Comments';
 
 const MovieDetails = () => {
     const { movieId } = useParams();
     const [movieDetails, setMovieDetails] = useState(null);
+    console.log("movieId", movieId);
+
 
     useEffect(() => {
         const fetchMovieDetails = () => {
@@ -27,8 +30,7 @@ const MovieDetails = () => {
     }, [movieId]); //ogni volta che movieId cambia use effect viene eseguito
 
     if (!movieDetails) {
-        return <div><Spinner  animation="border" role="status" >
-      <span className="visually-hidden" variant="light">Loading...</span>
+        return <div><Spinner variant="light"  animation="border" role="status" >
     </Spinner></div>;
     }
 
@@ -38,6 +40,7 @@ const MovieDetails = () => {
             <p className="detail-text">Year: {movieDetails.Year}</p>
             <img src={movieDetails.Poster} alt="poster" />
             <p className="py-4 detail-text">{movieDetails.Plot}</p>
+            <Comments elementId={movieDetails.imdbID}/>
         </div>
     );
 };
